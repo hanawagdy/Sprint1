@@ -1,0 +1,4 @@
+{"_id":{"$oid":"5a987b05c60c1fb7506e2422"},"name":"Pancakes","price":"100"}
+{"_id":{"$oid":"5a987b15c60c1fb7506e2423"},"name":"Nutella","price":"10000"}
+{"_id":{"$oid":"5a997d1271ab3a22089b76a8"},"name":"choco","price":17,"createdAt":{"$date":"2018-03-02T16:34:26.738Z"},"__v":0}
+{"_id":{"$oid":"5a997d1e71ab3a22089b76a9"},"name":"loco","price":7,"createdAt":{"$date":"2018-03-02T16:34:38.114Z"},"__v":0,"updatedAt":{"$date":"2018-03-02T16:34:42.357Z"}}
