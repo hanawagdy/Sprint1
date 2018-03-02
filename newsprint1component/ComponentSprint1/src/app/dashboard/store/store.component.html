@@ -1,0 +1,94 @@
+
+
+<table ng-table="tableParams" class="table" show-filter="true">
+    <!--<th> ID </th>-->
+    <th> Name </th> <th> Price </th> <th> Created At </th> <th> Updated At </th>
+
+    <th><button class="btn btn-hero-success" (click)="ngForm=!ngForm"> <i class="fas fa-plus"></i></button></th>
+
+    <!--<th> <button > <i class="fas fa-minus"></i></button></th>-->
+  <!--<th>  <button  class="btn btn-danger">Delete</button> </th>-->
+   <!--<th> <button class="btn btn-primary">Edit</button></th>-->
+    <!--<ion-buttons *ngIf="!toggle" end>-->
+    <!--(click)="product.deleteProduct()"-->
+        <!--<button ion-button (click)="ptoduct.del">-->
+            <!--<h3> <ion-icon  name="create"></ion-icon></h3>-->
+        <!--</button>-->
+    <!--</ion-buttons>-->
+
+    <!--<a href="#" class="button" ng-click="addRow()">Add Row {{counter}}</a>-->
+    <tr *ngFor="let product of products">
+
+        <!--<td title="'ID'" filter="{ ID: 'int'}" sortable="'ID'">-->
+            <!--{{product.ID}}  </td>-->
+        <td title="'name'" filter="{ name: 'text'}" sortable="'name'">
+            {{product.name}}</td>
+        <td title="'price'" filter="{ price: 'text'}" sortable="'price'">
+            {{product.price}} </td>
+            <td title="'createdAt'" filter="{ createdAt: 'date'}" sortable="'createdAt'">
+            {{product.createdAt}} </td>
+          <td title="'updatedAt'" filter="{ updatedAt: 'date'}" sortable="'updatedAt'">
+            {{product.updatedAt}} </td>
+        <!--<td title="'sellerName'" filter="{ sellerName: 'text'}" sortable="'sellerName'">-->
+            <!--{{product.sellerName}} </td>-->
+        <td> <button  class="btn btn-danger" (click)="deleteProduct(product)">Delete</button></td>
+        <td><button class="btn btn-primary" (click)="updateProduct(name.value,price.value,product)">Edit</button></td>
+
+    </tr>
+    <form>
+
+        <!--ID:<input #ID type="int" ><br>-->
+        Enter here to edit<br>
+        NAME: <input type="text" #name ><br>     PRICE: <input type="text" #price> <br>
+        <!--<button type="button" class="btn btn-hero-success"(click)="updateProduct(name.value,price.value,sellerName.value)">Add New Product </button>-->
+
+
+    </form>
+
+</table>
+
+<div class="Display" *ngIf="ngForm">
+
+    <form [formGroup]="newproduct" (ngSubmit)="createProduct()" >
+    <div class="form-group">
+        <label for="Name">Name</label>
+   <input formControlName="Name" type="text" class="form-control" id="Name">
+    </div>
+    <div class="form-group">
+        <label for="Price">Price</label>
+        <input formControlName="Price" type="number" class="form-control" id="Price">
+    </div>
+    <!--<div class="form-group">-->
+        <!--<label for="SellerName">Seller Name</label>-->
+        <!--&lt;!&ndash;<input formControlName="SellerName" type="text" class="form-control" id="SellerName">&ndash;&gt;-->
+    <!--</div>-->
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
+</div>
+
+
+<!--<div class="Display" *ngIf="ngForm">-->
+
+    <!--<form [formGroup]="newproduct" (ngSubmit)="updateProduct()" >-->
+        <!--<div class="form-group">-->
+            <!--<label for="Name">Name</label>-->
+            <!--<input formControlName="Name" type="text" class="form-control" id="Name1">-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<label for="Price">Price</label>-->
+            <!--<input formControlName="Price" type="number" class="form-control" id="Price1">-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<label for="SellerName">Seller Name</label>-->
+            <!--<input formControlName="SellerName" type="text" class="form-control" id="SellerName1">-->
+        <!--</div>-->
+        <!--<button type="submit" class="btn btn-success">Submit</button>-->
+    <!--</form>-->
+<!--</div>-->
+
+
+
+
+
+
+
